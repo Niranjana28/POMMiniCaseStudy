@@ -38,6 +38,9 @@ public class OrderPage extends TestBase{
 	@FindBy(xpath="//button[@class='btn btn-primary'][@onclick='purchaseOrder()']")
 	WebElement purchase;
 	
+	@FindBy(xpath="//button[text()='OK']")
+	public WebElement ok;
+	
 	
 	public WebElement message;
 	public OrderPage() {
@@ -57,8 +60,9 @@ public class OrderPage extends TestBase{
 		month.sendKeys("May");
 		year.sendKeys("2022");
 		wait.until(ExpectedConditions.visibilityOf(purchase));
-		wait.until(ExpectedConditions.elementToBeClickable(purchase));
 		purchase.click();
+		wait.until(ExpectedConditions.elementToBeClickable(purchase));
+		ok.click();
 		Thread.sleep(3000);
 		
 	}

@@ -68,8 +68,10 @@ public class TestCase extends TestBase {
   @Test(priority=5)
   public void Placeorder() throws InterruptedException {
 	  order = new OrderPage();
+	  Thread.sleep(3000);
 	  order.Placeorder();
 	  WebElement msg=order.message;
+	  wait=new WebDriverWait(driver,Duration.ofSeconds(30));
 	  Assert.assertTrue(msg.isDisplayed());
  }
  
