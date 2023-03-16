@@ -10,7 +10,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import base.TestBase;
 
-public class OrderPage extends TestBase{
+public class PurchasePage extends TestBase{
 	
 	WebDriverWait wait;
 	
@@ -41,17 +41,15 @@ public class OrderPage extends TestBase{
 	@FindBy(xpath="//button[text()='OK']")
 	public WebElement ok;
 	
-	
-	public WebElement message;
-	public OrderPage() {
+	public PurchasePage() {
 		PageFactory.initElements(driver, this);
 	}
 	
 	public void Placeorder () throws InterruptedException {
 		wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-	   driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(20));
-	   Thread.sleep(3000);
-	   driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+	    driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(20));
+	    Thread.sleep(3000);
+	    driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		placeorder.click();
 		name.sendKeys("Niranjana");
 		country.sendKeys("India");
@@ -60,10 +58,10 @@ public class OrderPage extends TestBase{
 		month.sendKeys("May");
 		year.sendKeys("2022");
 		wait.until(ExpectedConditions.visibilityOf(purchase));
-		purchase.click();
 		wait.until(ExpectedConditions.elementToBeClickable(purchase));
-		ok.click();
+		purchase.click();
 		Thread.sleep(3000);
+		ok.click();
 		
 	}
 

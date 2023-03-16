@@ -15,7 +15,7 @@ import base.TestBase;
 
 
 
-public class AddItemToCartPage extends TestBase{
+public class HomePage extends TestBase{
 	 Alert alert;
      WebDriverWait wait;
 	 
@@ -26,12 +26,8 @@ public class AddItemToCartPage extends TestBase{
 	 @FindBy(xpath="//a[contains(text(),'Add to cart')]")
 	 public WebElement addtocartBtn;
 	 
-	// Alert alert=driver.switchTo().alert();
-	// alert.accept();
-	 
-/*
-	
-	@FindBy(xpath="//a[@class='btn btn-success btn-lg'][@onclick='addToCart(3)']")
+  /*
+    @FindBy(xpath="//a[@class='btn btn-success btn-lg'][@onclick='addToCart(3)']")
 	WebElement addtoCartBtn1;
 	
 	@FindBy(xpath="//a[@class='btn btn-success btn-lg'][@onclick='addToCart(8)']")
@@ -43,7 +39,7 @@ public class AddItemToCartPage extends TestBase{
 	@FindBy(xpath="//a[@class='btn btn-success btn-lg'][@onclick='addToCart(1)']")
 	WebElement addtoCartBtn4;*/
 	
-	public AddItemToCartPage() {
+	public HomePage() {
 		PageFactory.initElements(driver, this);
 	}
 	
