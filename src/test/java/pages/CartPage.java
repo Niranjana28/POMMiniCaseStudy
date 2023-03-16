@@ -15,10 +15,6 @@ import base.TestBase;
 public class CartPage extends TestBase{
     
 	WebDriverWait wait;
-	@FindBy(id="cartur")
-	WebElement cart;
-		
-	
 	@FindBy (xpath="(//a[text()='Delete'])[1]")
 	WebElement deleteBtn;
 	
@@ -29,12 +25,7 @@ public class CartPage extends TestBase{
 		PageFactory.initElements(driver, this);
 	}
 
-	public void cart() throws InterruptedException {
-		cart.click();
-		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
 	
-		 
-	}
 	
 	public void delete() throws InterruptedException {
 		wait=new WebDriverWait(driver,Duration.ofSeconds(50));

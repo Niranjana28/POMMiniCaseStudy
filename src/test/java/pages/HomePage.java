@@ -26,22 +26,14 @@ public class HomePage extends TestBase{
 	 @FindBy(xpath="//a[contains(text(),'Add to cart')]")
 	 public WebElement addtocartBtn;
 	 
-  /*
-    @FindBy(xpath="//a[@class='btn btn-success btn-lg'][@onclick='addToCart(3)']")
-	WebElement addtoCartBtn1;
-	
-	@FindBy(xpath="//a[@class='btn btn-success btn-lg'][@onclick='addToCart(8)']")
-	WebElement addtoCartBtn2;
-	
-	@FindBy(xpath="//a[@class='btn btn-success btn-lg'][@onclick='addToCart(7)']")
-	WebElement addtoCartBtn3;
-	
-	@FindBy(xpath="//a[@class='btn btn-success btn-lg'][@onclick='addToCart(1)']")
-	WebElement addtoCartBtn4;*/
+	 @FindBy(id="cartur")
+	 WebElement cart;
+	 
 	
 	public HomePage() {
 		PageFactory.initElements(driver, this);
 	}
+
 	
 	public void addItem(String MultipleItems) throws InterruptedException {
 		wait = new WebDriverWait(driver,Duration.ofSeconds(20));
@@ -55,9 +47,12 @@ public class HomePage extends TestBase{
 	    alert=driver.switchTo().alert();
 	    alert.accept();
 	    home.click();
-		
-		
-		}
+	}
+	public void cart() throws InterruptedException {
+		cart.click();
+		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
+	
+    }
 
 	
 }

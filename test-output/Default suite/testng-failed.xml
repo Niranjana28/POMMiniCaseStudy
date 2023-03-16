@@ -5,10 +5,11 @@
     <classes>
       <class name="testScripts.TestCase">
         <methods>
+          <include name="login"/>
           <include name="delete"/>
           <include name="cart"/>
           <include name="Placeorder"/>
-          <include name="addItem" invocation-numbers="0 1"/>
+          <include name="addItem"/>
           <include name="setup"/>
         </methods>
       </class> <!-- testScripts.TestCase -->

@@ -27,7 +27,6 @@ public class TestCase extends TestBase {
 	CartPage cartPage;
 	HomePage homePage;
 	PurchasePage purchasePage;
-	
 	WebDriverWait wait;
 	
     @BeforeTest
@@ -53,8 +52,8 @@ public class TestCase extends TestBase {
    
    @Test(priority=3)
    public void cart() throws InterruptedException{
-	   cartPage = new CartPage();
-	   cartPage.cart();
+	   homePage = new HomePage();
+	   homePage.cart();
 }
   @Test(priority=4, dependsOnMethods="cart")
    public void delete() throws InterruptedException {
@@ -70,8 +69,8 @@ public class TestCase extends TestBase {
 	  Thread.sleep(3000);
 	  order.Placeorder();
 	  wait=new WebDriverWait(driver,Duration.ofSeconds(30));
-	 //Assert.assertTrue(msg.isDisplayed());
- }
+	 //Assert.assertTrue(msg.isDisplayed())}
+	 }
  
 
   @DataProvider(name="MultipleItems")

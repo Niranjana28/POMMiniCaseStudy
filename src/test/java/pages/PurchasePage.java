@@ -65,5 +65,4 @@ public class PurchasePage extends TestBase{
 		
 	}
 
-	
 }
